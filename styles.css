@@ -1,33 +1,44 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     font-size: 16px;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
     margin: 0;
     padding: 0;
+    transition: background 0.3s ease-in-out;
 }
 
-/* Header Styles */
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
 header {
-    background-color: #ff9800;
+    background: linear-gradient(135deg, #ff9800, #ff6f00);
     color: white;
     text-align: center;
     padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-    margin: 0;
-    font-size: 2.5rem;
+/* NAVIGATION STYLES */
+nav {
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+    margin: 10px auto;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 15px 0;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
@@ -35,56 +46,85 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease-in-out;
 }
 
+/* Hover Effects */
 nav ul li a:hover {
     color: #ffe082;
 }
 
-/* Main Content */
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #ffe082;
+    transition: width 0.3s;
+    margin: 5px auto 0;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Style NAV Image */
+nav img {
+    width: 10%;
+    position: relative;
+    top: 20px;
+}
+
+/* MAIN CONTENT */
 main {
-    padding: 20px;
+    padding: 40px 10%;
     text-align: center;
 }
 
+/* Featured Image */
 .feature-img {
     width: 80%;
     max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
     margin: 20px 0;
 }
 
-p {
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 15px;
+.feature-img:hover {
+    transform: scale(1.05);
 }
 
-/* Animation */
-.animate-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-out forwards;
+/* GRID STYLING */
+.grid {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Only Target Images Inside the Grid */
+.grid img {
+    width: 100%;
 }
 
-/* Footer */
+/* FLEX STYLING */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* FOOTER */
 footer {
-    background-color: #333;
+    background: #333;
     color: white;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 1rem;
 }
